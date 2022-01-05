@@ -24,10 +24,6 @@ import java.io.File;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private Button nextButton;
-    private EditText nameText;
-    private EditText emailText;
-    private EditText phoneText;
     private String name;
     private String email;
     private String phone;
@@ -45,13 +41,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: Started");
-        //text fields and button initialization
+
+        //used to access .xml objects
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        /*nextButton = (Button) findViewById(R.id.nextButton);
-        nameText = (EditText) findViewById(R.id.editTextTextPersonName);
-        emailText = (EditText) findViewById(R.id.editTextTextEmailAddress);
-        phoneText = (EditText) findViewById((R.id.editTextPhone));*/
 
         if(preferencesExists()) //check if data has been saved. if so, open home activity
         {
@@ -60,12 +53,12 @@ public class MainActivity extends AppCompatActivity {
         }
         else //no save data
         {
-            nextButton.setOnClickListener(new View.OnClickListener() {
+            binding.nextButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    name = nameText.getEditableText().toString();
-                    email = emailText.getEditableText().toString();
-                    phone = phoneText.getEditableText().toString();
+                    name = binding.editTextTextPersonName.getEditableText().toString();
+                    email = binding.editTextTextEmailAddress.getEditableText().toString();
+                    phone = binding.editTextPhone.getEditableText().toString();
 
                     if(TextUtils.isEmpty(name) || TextUtils.isEmpty(email) || TextUtils.isEmpty(phone))
                     {

@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Reminder Application</string>
+    <string name="greeting_message">Hello </string>
+    <string name="button1">New Reminder</string>
+    <string name="button2">New Task</string>
+    <string name="fab_icon">fab menu</string>
 </resources>
+
