@@ -4,5 +4,7 @@
     <string name="button1">New Reminder</string>
     <string name="button2">New Task</string>
     <string name="fab_icon">fab menu</string>
+    <string name="settings">Settings</string>
+    <string name="reminder_text">Create a new reminder</string>
 </resources>
 
